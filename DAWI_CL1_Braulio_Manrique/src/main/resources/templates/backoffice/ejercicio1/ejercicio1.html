@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragment/fragmento :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:replace="fragment/fragmento :: menu"></nav>
+<h1>Ejercicio 1</h1>
+<form th:action="@{/ejercicio1}" th:object="${ejercicio1}" method="post">
+    <div class="mb-1">
+        <label class="form-label">Hora</label>
+        <input th:field="*{horas}" type="text" name="horas" class="form-control">
+    </div>
+    <div class="mb-1">
+        <label class="form-label">Minutos</label>
+        <input th:field="*{minutos}" type="text" name="minutos" class="form-control">
+    </div>
+    <div class="mb-1">
+        <button type="submit" class="btn btn-outline-primary">Consultar</button>
+    </div>
+</form>
+<div class="alert alert-primary" th:if="${total != null}">
+    <p th:text="${total}"></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragment/fragmento :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:replace="fragment/fragmento :: menu"></nav>
+<h1>Ejercicio 2</h1>
+<form th:action="@{/ejercicio2}" th:object="${ejercicio2}" method="post">
+    <div class="mb-1">
+        <label class="form-label">Nota1</label>
+        <input th:field="*{N1}" type="text" name="Nota1" class="form-control">
+    </div>
+    <div class="mb-1">
+        <label class="form-label">Nota2</label>
+        <input th:field="*{N2}" type="text" name="Nota2" class="form-control">
+    </div>
+    <div class="mb-1">
+        <label class="form-label">Nota3</label>
+        <input th:field="*{N3}" type="text" name="Nota3" class="form-control">
+    </div>
+    <div class="mb-1">
+        <label class="form-label">Nota4</label>
+        <input th:field="*{N4}" type="text" name="Nota4" class="form-control">
+    </div>
+        <div class="mb-1">
+            <button type="submit" class="btn btn-outline-primary">Consultar</button>
+        </div>
+</form>
+<div class="alert alert-primary" th:if="${total != null}">
+    <p th:text="${total}"></p>
+</div>
+</body>
+</html>

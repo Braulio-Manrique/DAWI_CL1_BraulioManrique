@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="">
+<head th:replace="fragment/fragmento :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:replace="fragment/fragmento :: menu"></nav>
+<h1>Ejercicio 3</h1>
+<form th:action="@{/ejercicio3}" th:object="${ejercicio3}" method="post">
+  <div class="mb-1">
+    <label class="form-label">Año</label>
+    <input th:field="*{anio}" type="text" name="anio" class="form-control">
+  </div>
+  <div class="mb-1">
+    <button type="submit" class="btn btn-outline-primary">Consultar</button>
+  </div>
+</form>
+<div class="alert alert-primary" th:if="${rs != null}">
+  <p th:text="${rs}"></p>
+</div>
+</body>
+</html>
